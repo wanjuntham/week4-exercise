@@ -19,10 +19,18 @@ export class UserComponent implements OnInit {
     this.userService.getName().subscribe(name => {
       this.name = name
     })
-    this.age = this.userService.getAge()
-    this.isStudent = this.userService.getIsStudent()
-    this.tasks = this.userService.getTasks()
-    this.company = this.userService.getCompany()
+    this.userService.getAge().subscribe(age => {
+      this.age = age
+    })
+    this.userService.getIsStudent().subscribe(isStudent => {
+      this.isStudent = isStudent
+    })
+    this.userService.getTasks().subscribe(tasks => {
+      this.tasks = tasks
+    })
+    this.company = this.userService.getCompany().subscribe(company => {
+      this.company = company
+    })
   }
 
   onClick() {
@@ -30,3 +38,4 @@ export class UserComponent implements OnInit {
   }
 
 }
+

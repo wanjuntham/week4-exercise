@@ -6,12 +6,12 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UserService {
   name = new BehaviorSubject("John")
-  age = 27
-  isStudent = false
-  tasks = ["Buy Groceries", "Do Homework"]
-  company = {
+  age = new BehaviorSubject(27)
+  isStudent = new BehaviorSubject(false)
+  tasks = new BehaviorSubject(["Buy Groceries", "Do Homework"])
+  company = new BehaviorSubject({
     name: "Dell"
-  }
+  })
 
   constructor() { }
 
@@ -37,9 +37,9 @@ export class UserService {
 
   change() {
     this.name.next("Jane")
-    this.age = 18
-    this.isStudent = !this.isStudent
-    this.tasks = ["Do Nothing"]
-    this.company = {name: "Microsoft"}
+    this.age.next(18)
+    this.isStudent.next(!this.isStudent)
+    this.tasks.next(["Do Nothing"])
+    this.company.next({name: "Microsoft"})
   }
 }
