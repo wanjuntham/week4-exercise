@@ -1,0 +1,12 @@
+<p>Name: {{name}}</p>
+<p>Age: {{age}}</p>
+<p>Is Student: {{isStudent}}</p>
+<p>Tasks</p>
+<ul>
+  <li *ngFor="let task of tasks">
+    {{task}}
+  </li>
+</ul>
+<p>Company: {{company.name}}</p>
+
+<button (click)="onClick()">Change Me</button>
