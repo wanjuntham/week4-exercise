@@ -1,4 +1,6 @@
+<div class="user-info">
 <p>Name: {{name}}</p>
+<p>Gender: {{gender}}</p>
 <p>Age: {{age}}</p>
 <p>Is Student: {{isStudent}}</p>
 <p>Tasks</p>
@@ -8,5 +10,16 @@
   </li>
 </ul>
 <p>Company: {{company.name}}</p>
+<p>Schools: </p>
+<ul>
+  <li *ngFor= "let school of schools">
+    {{school}}
+  </li>
+</ul>
+<p>Date of Birth: </p>
+<p>day: {{dateOfBirth.day}}</p>
+<p>Month: {{dateOfBirth.month}}</p>
+<p>Year: {{dateOfBirth.year}}</p>
 
 <button (click)="onClick()">Change Me</button>
+</div>

@@ -7,15 +7,22 @@ import { UserService } from '../user.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  gender: string
   name: string
   age: number
   isStudent: boolean
   tasks:string[] = []
   company = {}
+  schools=[]
+  dateOfBirth = {}
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
+
+    this.userService.getGender().subscribe(gender => {
+      this.gender = gender
+    })
     this.userService.getName().subscribe(name => {
       this.name = name
     })
@@ -28,8 +35,14 @@ export class UserComponent implements OnInit {
     this.userService.getTasks().subscribe(tasks => {
       this.tasks = tasks
     })
-    this.company = this.userService.getCompany().subscribe(company => {
+    this.userService.getCompany().subscribe(company => {
       this.company = company
+    })
+    this.userService.getSchools().subscribe(schools => {
+      this.schools = schools
+    })
+    this.userService.getDOB().subscribe(dob => {
+      this.dateOfBirth = dob
     })
   }
 

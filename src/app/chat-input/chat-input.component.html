@@ -1,0 +1,28 @@
+
+<!-- <p>Type your Message here</p>
+<div *ngIf="message.dirty">
+  <p *ngIf="message.errors.minlength">
+    Error: Message less than 5 characters
+  </p>
+</div>
+<input type="text" [formControl]="message"/>
+
+<p>Type your Username here</p>
+<p *ngIf="username.errors.minlength && message.dirty">Error: Username over 20 characters</p>
+<input type="text" [formControl]="username"/> -->
+
+<form [formGroup] = "profile" (ngSubmit) = "onSubmit()">
+  <p>Type your Email here</p>
+  <input type = "text" formControlName = "email"/>
+  <p>Type your Username here</p>
+  <input type = "text" formControlName = "username"/>
+  <p>Type your password here</p>
+  <input type = "password" formControlName = "password"/>
+  <input type = "submit" value = "Submit"/>
+</form>
+<p>Type your Date here</p>
+<input type="text" [formControl]="date"/>
+
+<button (click)="onClick()">Click Me</button>
+
+
